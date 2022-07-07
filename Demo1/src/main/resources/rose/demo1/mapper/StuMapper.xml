@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="rose.demo1.mapper.StuMapper">
+
+    <resultMap id="demo" type="rose.demo1.test.Stu">
+        <result column="hire_date" property="hireDate"></result>
+    </resultMap>
+    <select id="SelectAll" resultMap="demo">
+        select * from stu;
+    </select>
+
+    <select id="SelectById" resultMap="demo">
+        select *
+        from stu
+        where id = #{id};
+
+    </select>
+</mapper>
